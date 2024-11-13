@@ -12,7 +12,7 @@ class ClinicalT5Model(nn.Module):
     def __init__(self, max_input_len, max_output_len, num_beams, root=None, device='cuda:0'):
         super().__init__()
         self.root = root if root is not None \
-            else "/media/georgiosm/HDD_8TB/clinical-t5/1.0.0/Clinical-T5-Large"
+            else "/Users/himangshudeka/HDD_8TB/clinical-t5/1.0.0/Clinical-T5-Large"
         self.tokenizer = AutoTokenizer.from_pretrained(self.root)
         self.seq2seq = AutoModelForSeq2SeqLM.from_pretrained(self.root)
         self.metrics = evaluate.load("bertscore")
